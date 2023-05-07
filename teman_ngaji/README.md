@@ -1,16 +1,13 @@
-# teman_ngaji
+# Teman Ngaji App
 
-A new Flutter project.
+Merupakan aplikasi yang membantu user Muslim untuk belajar Tahsin dengan Guru Tahsin baik secara Online atau booking Kelas Tahsin Offline.
 
-## Getting Started
+MVP dalam aplikasi ini adalah :
 
-This project is a starting point for a Flutter application.
+1. Booking Class Tahsin
+2. Fitur Quran
+3. Fitur Informasi Kajian
 
-A few resources to get you started if this is your first Flutter project:
+Dokumen MVP aplikasi dapat dilihat di : https://docs.google.com/document/d/1SCGRKdAP5QWcjrpYydAbUZNjxUeep60aCvWLUrQ5iOE/edit
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Presentasi Aplikasi dapat dilihat di : https://docs.google.com/presentation/d/1Z-ZAgF8ibNDY5QXQEbULMSc-89diP5_Jl9vWiUbfCi0/edit#slide=id.p
