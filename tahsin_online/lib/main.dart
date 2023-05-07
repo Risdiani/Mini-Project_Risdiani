@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teman_ngaji/screen/splash_screen.dart';
+import 'package:tahsin_online/screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
