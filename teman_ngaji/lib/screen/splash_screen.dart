@@ -42,8 +42,8 @@ class SplashScreen extends StatelessWidget {
                       height: 450,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: const Color(0xFF672CBC)),
+                          borderRadius: BorderRadius.circular(45),
+                          color: const Color(0xFFA4D0A4)),
                     ),
                     Image.asset('assets/splash.png'),
                     Positioned(
@@ -60,7 +60,7 @@ class SplashScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 40, vertical: 16),
                             decoration: BoxDecoration(
-                                color: orange,
+                                color: button,
                                 borderRadius: BorderRadius.circular(30)),
                             child: Text(
                               'Mulai',
