@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:teman_ngaji/screen/home_screen.dart';
+import 'package:teman_ngaji/screen/login_screen.dart';
 import 'package:teman_ngaji/utils/theme.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -43,7 +44,7 @@ class SplashScreen extends StatelessWidget {
                       width: double.infinity,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(45),
-                          color: const Color(0xFFA4D0A4)),
+                          color: green),
                     ),
                     Image.asset('assets/splash.png'),
                     Positioned(
@@ -54,7 +55,7 @@ class SplashScreen extends StatelessWidget {
                         child: GestureDetector(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
+                                builder: (context) => const LoginScreen()));
                           },
                           child: Container(
                             padding: const EdgeInsets.symmetric(
@@ -63,7 +64,7 @@ class SplashScreen extends StatelessWidget {
                                 color: button,
                                 borderRadius: BorderRadius.circular(30)),
                             child: Text(
-                              'Mulai',
+                              'Tap Here',
                               style: GoogleFonts.poppins(
                                   fontSize: 18, fontWeight: FontWeight.w600),
                             ),
