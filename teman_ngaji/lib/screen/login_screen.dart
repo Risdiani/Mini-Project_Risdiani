@@ -77,19 +77,22 @@ class _LoginScreenState extends State<LoginScreen> {
         key: formKey,
         child: ListView(
           children: [
-            Center(
-              child: Text(
-                'Memperbaiki bacaan Al Quran itu\nseperti menarik anak panah,\nsemakin ditarik ke belakang,\nsemakin kuatlah luncuran panahnya ke depan.',
-                style: GoogleFonts.poppins(color: text, fontSize: 18),
-                textAlign: TextAlign.center,
-              ),
+            const SizedBox(height: 100),
+            Text(
+              'Memperbaiki bacaan Al Quran itu\nseperti menarik anak panah,\nsemakin ditarik ke belakang,\nsemakin kuatlah luncuran panahnya ke depan.',
+              style: GoogleFonts.poppins(
+                  color: const Color(0xFF263A29),
+                  fontSize: 15,
+                  fontStyle: FontStyle.italic),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(
-              height: 10,
+              height: 50,
             ),
             TextFormField(
               controller: _nameController,
               decoration: const InputDecoration(
+                fillColor: Color(0xFFFFFFFF),
                 prefixIcon: Icon(Icons.account_circle_rounded),
                 labelText: 'Username',
                 border: OutlineInputBorder(),
@@ -140,27 +143,40 @@ class _LoginScreenState extends State<LoginScreen> {
               },
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                final isValidForm = formKey.currentState!.validate();
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: -23,
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    final isValidForm = formKey.currentState!.validate();
 
-                if (isValidForm) {
-                  String username = _nameController.text;
-                  logindata.setBool('login', false);
-                  logindata.setString('username', username);
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
+                    if (isValidForm) {
+                      String username = _nameController.text;
+                      logindata.setBool('login', false);
+                      logindata.setString('username', username);
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                        (route) => false,
+                      );
+                    }
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 16),
+                    decoration: BoxDecoration(
+                        color: button, borderRadius: BorderRadius.circular(30)),
+                    child: Text(
+                      'Login',
+                      style: GoogleFonts.poppins(
+                          fontSize: 18, fontWeight: FontWeight.w600),
                     ),
-                    (route) => false,
-                  );
-                }
-              },
-              child: Text(
-                'Login',
-                style: GoogleFonts.poppins(
-                    fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                ),
               ),
             ),
           ],
