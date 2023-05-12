@@ -2,7 +2,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:teman_ngaji/screen/home_screen.dart';
+import 'package:teman_ngaji/view/screen/home_screen.dart';
 import 'package:teman_ngaji/utils/theme.dart';
 
 class LoginScreen extends StatefulWidget {

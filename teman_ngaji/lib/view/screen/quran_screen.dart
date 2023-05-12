@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:teman_ngaji/utils/theme.dart';
+import 'package:teman_ngaji/view_model/hijb_dart.dart';
+
+import '../../view_model/page_tab.dart';
+import '../../view_model/para_tab.dart';
+import '../../view_model/surah_tab.dart';
 
 class QuranScreen extends StatefulWidget {
   const QuranScreen({super.key});
@@ -28,7 +33,7 @@ class _QuranScreenState extends State<QuranScreen> {
         body: DefaultTabController(
           length: 4,
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
             child: NestedScrollView(
                 headerSliverBuilder: (context, innerBoxIsScrolled) => [
                       SliverToBoxAdapter(
@@ -50,7 +55,9 @@ class _QuranScreenState extends State<QuranScreen> {
                         ),
                       )
                     ],
-                body: Container()),
+                body: const TabBarView(
+                  children: [SurahTab(), ParaTab(), PageTab(), HijbTab()],
+                )),
           ),
         ));
   }

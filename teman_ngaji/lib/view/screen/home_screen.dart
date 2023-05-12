@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:teman_ngaji/screen/profile_screen.dart';
+import 'package:teman_ngaji/view/screen/profile_screen.dart';
 import 'package:teman_ngaji/utils/theme.dart';
-import 'package:teman_ngaji/widget/kajian.dart';
-import 'package:teman_ngaji/widget/kelas_tahsin.dart';
-import 'package:teman_ngaji/widget/quran.dart';
+import 'package:teman_ngaji/view/widget/kajian.dart';
+import 'package:teman_ngaji/view/widget/kelas_tahsin.dart';
+import 'package:teman_ngaji/view/widget/quran.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
