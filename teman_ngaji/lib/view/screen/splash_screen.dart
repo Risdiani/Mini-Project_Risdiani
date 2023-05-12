@@ -44,6 +44,7 @@ class SplashScreen extends StatelessWidget {
                       bottom: -45,
                       child: Center(
                         child: GestureDetector(
+                          behavior: HitTestBehavior.opaque,
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => const LoginScreen()));

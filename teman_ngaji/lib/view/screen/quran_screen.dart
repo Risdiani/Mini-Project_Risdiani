@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:teman_ngaji/utils/theme.dart';
-import 'package:teman_ngaji/view_model/hijb_dart.dart';
+import 'package:teman_ngaji/view_model/doa_tab.dart';
 
-import '../../view_model/page_tab.dart';
-import '../../view_model/para_tab.dart';
+import '../../view_model/playlist_tab.dart';
+
 import '../../view_model/surah_tab.dart';
 
 class QuranScreen extends StatefulWidget {
@@ -56,7 +56,7 @@ class _QuranScreenState extends State<QuranScreen> {
                       )
                     ],
                 body: const TabBarView(
-                  children: [SurahTab(), ParaTab(), PageTab(), HijbTab()],
+                  children: [SurahTab(), PlaylistTab(), DoaTab()],
                 )),
           ),
         ));

@@ -80,15 +80,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: const Color(0xFF263A29)),
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           const QuranWidget(),
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
           const KelasTahsin(),
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
           const KajianWidget(),
         ]),

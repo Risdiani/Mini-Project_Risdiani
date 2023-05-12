@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ParaTab extends StatelessWidget {
-  const ParaTab({super.key});
+class PlaylistTab extends StatelessWidget {
+  const PlaylistTab({super.key});
 
   @override
   Widget build(BuildContext context) {

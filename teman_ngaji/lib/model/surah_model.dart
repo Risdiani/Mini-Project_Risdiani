@@ -1,25 +1,34 @@
 import 'dart:convert';
 
-class SurahModel {
-  final int nomor;
-  final String nama;
-  final String namaLatin;
-  final int jumlahAyat;
-  final TempatTurun tempatTurun;
-  final String arti;
-  final String deskripsi;
-  final String audio;
+import 'surah_detail_model.dart';
 
-  SurahModel({
-    required this.nomor,
-    required this.nama,
-    required this.namaLatin,
-    required this.jumlahAyat,
-    required this.tempatTurun,
-    required this.arti,
-    required this.deskripsi,
-    required this.audio,
-  });
+List<SurahModel> surahFromJson(String str) =>
+    List<SurahModel>.from(json.decode(str).map((x) => SurahModel.fromJson(x)));
+
+String surahToJson(List<SurahModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+class SurahModel {
+  int nomor;
+  String nama;
+  String namaLatin;
+  int jumlahAyat;
+  TempatTurun tempatTurun;
+  String arti;
+  String deskripsi;
+  String audio;
+  List<Ayat>? ayat;
+
+  SurahModel(
+      {required this.nomor,
+      required this.nama,
+      required this.namaLatin,
+      required this.jumlahAyat,
+      required this.tempatTurun,
+      required this.arti,
+      required this.deskripsi,
+      required this.audio,
+      this.ayat});
 
   factory SurahModel.fromRawJson(String str) =>
       SurahModel.fromJson(json.decode(str));
@@ -27,15 +36,17 @@ class SurahModel {
   String toRawJson() => json.encode(toJson());
 
   factory SurahModel.fromJson(Map<String, dynamic> json) => SurahModel(
-        nomor: json["nomor"],
-        nama: json["nama"],
-        namaLatin: json["nama_latin"],
-        jumlahAyat: json["jumlah_ayat"],
-        tempatTurun: tempatTurunValues.map[json["tempat_turun"]]!,
-        arti: json["arti"],
-        deskripsi: json["deskripsi"],
-        audio: json["audio"],
-      );
+      nomor: json["nomor"],
+      nama: json["nama"],
+      namaLatin: json["nama_latin"],
+      jumlahAyat: json["jumlah_ayat"],
+      tempatTurun: tempatTurunValues.map[json["tempat_turun"]]!,
+      arti: json["arti"],
+      deskripsi: json["deskripsi"],
+      audio: json["audio"],
+      ayat: json.containsKey('ayat')
+          ? List<Ayat>.from(json["ayat"]!.map((x) => Ayat.fromJson(x)))
+          : null);
 
   Map<String, dynamic> toJson() => {
         "nomor": nomor,
@@ -46,6 +57,8 @@ class SurahModel {
         "arti": arti,
         "deskripsi": deskripsi,
         "audio": audio,
+        "ayat":
+            ayat != null ? List<dynamic>.from(ayat!.map((e) => e.toJson())) : []
       };
 }
 

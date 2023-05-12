@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HijbTab extends StatelessWidget {
-  const HijbTab({super.key});
+class DoaTab extends StatelessWidget {
+  const DoaTab({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -22,6 +22,10 @@ class KelasTahsin extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+          _kelasTahsin(),
+          const SizedBox(
+            height: 3,
+          ),
           Row(
             children: [
               GestureDetector(
@@ -35,34 +39,49 @@ class KelasTahsin extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: button, borderRadius: BorderRadius.circular(30)),
                   child: Text(
-                    'Lihat Jadwal Kelas',
+                    'Lihat Daftar Kelas',
                     style: GoogleFonts.poppins(
                         fontSize: 15, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const DaftarKelas()));
-                },
-                child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                  decoration: BoxDecoration(
-                      color: button, borderRadius: BorderRadius.circular(30)),
-                  child: Text(
-                    'Lihat Jadwal Kelas',
-                    style: GoogleFonts.poppins(
-                        fontSize: 15, fontWeight: FontWeight.w600),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
             ],
           )
         ]);
+  }
+
+  _kelasTahsin() {
+    final List<String> imageName = [
+      'assets/kelas1.png',
+      'assets/kelas2.png',
+      'assets/kelas3.png'
+    ];
+    return CarouselSlider.builder(
+      itemCount: imageName.length,
+      itemBuilder: (context, index, realIndex) {
+        final name = imageName[index];
+        return Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          margin: const EdgeInsets.only(top: 12),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              name,
+              fit: BoxFit.fill,
+              width: 100,
+              height: 100,
+            ),
+          ),
+        );
+      },
+      options: CarouselOptions(
+        enlargeCenterPage: true,
+        disableCenter: true,
+        viewportFraction: .75,
+      ),
+    );
   }
 }
