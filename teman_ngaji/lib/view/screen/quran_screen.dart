@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:teman_ngaji/utils/theme.dart';
-import 'package:teman_ngaji/view_model/doa_tab.dart';
+import 'package:teman_ngaji/tab/doa_tab.dart';
 
-import '../../view_model/playlist_tab.dart';
+import '../../tab/playlist_tab.dart';
 
-import '../../view_model/surah_tab.dart';
+import '../../tab/surah_tab.dart';
 
 class QuranScreen extends StatefulWidget {
   const QuranScreen({super.key});
@@ -31,7 +31,7 @@ class _QuranScreenState extends State<QuranScreen> {
           ),
         ),
         body: DefaultTabController(
-          length: 4,
+          length: 3,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
             child: NestedScrollView(
@@ -70,9 +70,8 @@ class _QuranScreenState extends State<QuranScreen> {
       indicatorWeight: 3,
       tabs: [
         _tabItem(label: 'Surah'),
-        _tabItem(label: 'Para'),
-        _tabItem(label: 'Page'),
-        _tabItem(label: 'Hijb'),
+        _tabItem(label: 'Playlist'),
+        _tabItem(label: 'Doa'),
       ],
     );
   }

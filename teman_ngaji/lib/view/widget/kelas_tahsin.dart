@@ -1,8 +1,12 @@
+import 'dart:js';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:teman_ngaji/utils/theme.dart';
 import 'package:teman_ngaji/view/screen/daftar_kelas.dart';
+import 'package:teman_ngaji/view/widget/view_model/kelastahsin_provider.dart';
 
 class KelasTahsin extends StatelessWidget {
   const KelasTahsin({super.key});
@@ -22,7 +26,7 @@ class KelasTahsin extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          _kelasTahsin(),
+          _kelasTahsin(context),
           const SizedBox(
             height: 3,
           ),
@@ -51,16 +55,12 @@ class KelasTahsin extends StatelessWidget {
         ]);
   }
 
-  _kelasTahsin() {
-    final List<String> imageName = [
-      'assets/kelas1.png',
-      'assets/kelas2.png',
-      'assets/kelas3.png'
-    ];
+  _kelasTahsin(BuildContext context) {
+    final imageProvider = Provider.of<ImageName>(context, listen: false);
     return CarouselSlider.builder(
-      itemCount: imageName.length,
+      itemCount: 3,
       itemBuilder: (context, index, realIndex) {
-        final name = imageName[index];
+        final name = imageProvider.image[index];
         return Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
